@@ -33,6 +33,6 @@ func main() {
 	}
 
 	for _, b := range beers.Items {
-		fmt.Printf("%s/%s\n", b.Namespace, b.Name)
+		fmt.Printf("%s/%s color=%s\n", b.Namespace, b.Name, b.Color)
 	}
 }

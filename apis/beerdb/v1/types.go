@@ -1,7 +1,16 @@
 package v1
 
 import (
+	"k8s.io/apimachinery/pkg/api/resource"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+)
+
+type Color string
+
+const (
+	GoldColor   = Color("gold")
+	YellowColor = Color("yellow")
+	BlondColor  = Color("blond")
 )
 
 // +genclient
@@ -11,6 +20,12 @@ import (
 type Beer struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
+
+	// +kubebuilder:validation:Enum=gold;yellow;blond;unknown
+	// +kubebuilder:default=unknown
+	Color Color `json:"color,omitempty"`
+
+	Alcohol resource.Quantity `json:"alcohol,omitempty"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
