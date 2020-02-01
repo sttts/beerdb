@@ -1,0 +1,20 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: duvel
+---
+kind: Beer
+apiVersion: beerdb.fosdem.org/v1
+metadata:
+  name: classic
+  namespace: duvel
+color: yellow
+alcohol: "8.5"
+---
+kind: Beer
+apiVersion: beerdb.fosdem.org/v1
+metadata:
+  name: tripel-hop
+  namespace: duvel
+color: blond
+alcohol: "9.5"

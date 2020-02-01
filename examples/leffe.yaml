@@ -1,0 +1,21 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: leffe
+---
+kind: Beer
+apiVersion: beerdb.fosdem.org/v1
+metadata:
+  name: tripel
+  namespace: leffe
+color: gold
+alcohol: "8.5"
+---
+kind: Beer
+apiVersion: beerdb.fosdem.org/v1
+metadata:
+  name: blond
+  namespace: leffe
+color: blond
+alcohol: "6.6"
+foo: bar
